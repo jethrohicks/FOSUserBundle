@@ -277,18 +277,18 @@ interface FosUserInterface extends \Serializable
     public function isEnabled();
 }
 
-// This is required to support apps that explicitly check if a user is an instance of AdvancedUserInterface
-if (interface_exists('\Symfony\Component\Security\Core\User\AdvancedUserInterface')) {
-    /**
-     * @author Thibault Duplessis <thibault.duplessis@gmail.com>
-     * @author Johannes M. Schmitt <schmittjoh@gmail.com>
-     *
-     * @deprecated since Symfony 4.1. Remove in Nov 2023 (End of support for security fixes SF 4.4)
-     */
-    interface UserInterface extends FosUserInterface, \Symfony\Component\Security\Core\User\AdvancedUserInterface
-    {
-    }
-} else {
+//// This is required to support apps that explicitly check if a user is an instance of AdvancedUserInterface
+//if (interface_exists('\Symfony\Component\Security\Core\User\AdvancedUserInterface')) {
+//    /**
+//     * @author Thibault Duplessis <thibault.duplessis@gmail.com>
+//     * @author Johannes M. Schmitt <schmittjoh@gmail.com>
+//     *
+//     * @deprecated since Symfony 4.1. Remove in Nov 2023 (End of support for security fixes SF 4.4)
+//     */
+//    interface UserInterface extends FosUserInterface, \Symfony\Component\Security\Core\User\AdvancedUserInterface
+//    {
+//    }
+//} else {
     /**
      * @author Thibault Duplessis <thibault.duplessis@gmail.com>
      * @author Johannes M. Schmitt <schmittjoh@gmail.com>
@@ -297,4 +297,4 @@ if (interface_exists('\Symfony\Component\Security\Core\User\AdvancedUserInterfac
     interface UserInterface extends FosUserInterface, BaseUserInterface, EquatableInterface
     {
     }
-}
+//}
